@@ -136,7 +136,7 @@ def main(forum_scraper, thread):
 
 
 @retry(wait=wait_fixed(10))
-def run(url, cookie, thread, prod=False):
+def run(url, cookie, thread, prod=True):
     fs = ForumScraper(url, cookie, prod)
     while True:
         main(fs, thread)
@@ -148,7 +148,7 @@ url2 = "https://www.ignboards.com"
 cookie1 = "2,iLRxvPg_1uAU0YyXf-D1cD7RwjmUYhsusbshdhdhxhx" # test '2213_user cookie
 cookie2 = "96576647,gsgsgGujHs6263hdhdhdhdhdbdhsjxjisbe" # ign 'xf_user' cookie from browser
 
-# run(url1, cookie1, "1") # test: create a xenforo demo on: https://xenforo.com/demo/
+# run(url1, cookie1, "1", False) # test: create a xenforo demo on: https://xenforo.com/demo/
 
 run(url2, cookie2, "456723641", True)
  
