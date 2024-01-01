@@ -132,6 +132,8 @@ def main(forum_scraper, thread):
         cover = get_cover(artist, title)
         print("poste!", artist, title)
         forum_scraper.reply(thread, format_response(position, artist, title, cover))
+        if position == 1:
+            exit()
         save_conf({"stamp": actual_stamp, "position": position})
 
 
